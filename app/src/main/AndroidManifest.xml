@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lorablok">
+    package="com.vudrag.lorablok">
 
     <application
         android:allowBackup="true"
@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeDark">
-        <activity android:name=".activities.NovaIgraActivity"></activity>
-        <activity android:name=".activities.MainActivity">
+        <activity android:name="com.vudrag.lorablok.activities.RezultatiActivity"></activity>
+        <activity android:name="com.vudrag.lorablok.activities.NovaIgraActivity"></activity>
+        <activity android:name="com.vudrag.lorablok.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
