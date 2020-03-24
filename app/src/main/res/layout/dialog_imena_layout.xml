@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upišite imena igrača"/>
+
+    <EditText
+        android:id="@+id/txt_igrac_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Igrač 1"/>
+
+    <EditText
+        android:id="@+id/txt_igrac_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Igrač 2"/>
+
+    <EditText
+        android:id="@+id/txt_igrac_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Igrač 3"/>
+
+    <EditText
+        android:id="@+id/txt_igrac_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Igrač 4"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_odustani"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Odustani"
+            app:layout_constraintEnd_toStartOf="@id/btn_nastavi"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_nastavi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nastavi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
