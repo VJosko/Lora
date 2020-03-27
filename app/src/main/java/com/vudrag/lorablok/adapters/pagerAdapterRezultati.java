@@ -12,16 +12,18 @@ import com.vudrag.lorablok.fragments.FragmentRezultati;
 
 public class pagerAdapterRezultati extends FragmentPagerAdapter {
 
+    private IRezultati iRezultati;
 
-    public pagerAdapterRezultati(FragmentManager fm) {
+    public pagerAdapterRezultati(FragmentManager fm, IRezultati iRezultati) {
         super(fm);
+        this.iRezultati = iRezultati;
     }
 
     @Override
     public Fragment getItem(int position) {
         Fragment fragment = new FragmentRezultati();
         Bundle args = new Bundle();
-        args.putInt("fragment", position + 1);
+        args.putInt(FragmentRezultati.ARG_OBJECT, position);
         fragment.setArguments(args);
         return fragment;
     }
@@ -34,6 +36,10 @@ public class pagerAdapterRezultati extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return ("" + position);
+        return (iRezultati.naslov(position));
+    }
+
+    public interface IRezultati{
+        String naslov(int position);
     }
 }

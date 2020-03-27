@@ -13,8 +13,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.vudrag.lorablok.R;
+import com.vudrag.lorablok.classes.Game;
 import com.vudrag.lorablok.classes.Igra;
 import com.vudrag.lorablok.dialogs.ImenaDialog;
+import com.vudrag.lorablok.room.GamesRepository;
 import com.vudrag.lorablok.room.IgreRepository;
 
 import java.util.List;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements ImenaDialog.Imena
     private SharedPreferences.Editor mEditor;
 
     private IgreRepository mIgreRepository;
+    private GamesRepository mGamesRepository;
 
     //Opisi
     String opisVise, opisManje, opisDecki, opisBabe, opisKralj, opisSrca,
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements ImenaDialog.Imena
         setContentView(R.layout.activity_main);
 
         mIgreRepository = new IgreRepository(this);
+        mGamesRepository = new GamesRepository(this);
 
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mPreferences.edit();
@@ -93,6 +97,8 @@ public class MainActivity extends AppCompatActivity implements ImenaDialog.Imena
 
     @Override
     public void sendImena(String igrac1, String igrac2, String igrac3, String igrac4) {
+        Game game = new Game(igrac1, igrac2, igrac3, igrac4,0,0,0,0);
+        mGamesRepository.insertGameTask(game);
         startActivity(new Intent(MainActivity.this, NovaIgraActivity.class));
     }
 
